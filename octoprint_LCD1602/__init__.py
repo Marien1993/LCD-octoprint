@@ -47,7 +47,7 @@ class LCD1602Plugin(octoprint.plugin.StartupPlugin,
   def JobIsDone(self,lcd):
 
     # create final anim
-    self.birdy = [ '^_-' , '^_^', '-_^' , '^_^', '0_0', '-_-', '^_-', '^_^','@_@','*_*','$_$','<_<','>_>']
+    self.birdy = [ '^_-']
 
     for pos in range(0,13):
       lcd.cursor_pos = (1,pos)
@@ -135,7 +135,7 @@ class LCD1602Plugin(octoprint.plugin.StartupPlugin,
       if payload["state_string"] in "Paused":
         mylcd.clear()
         time.sleep(0.5)
-        mylcd.write_string('Printer is  gepauzeerd') 
+        mylcd.write_string('Printer is  gepauzeert') 
 
       if payload["state_string"] in "Resuming":
         mylcd.clear()
